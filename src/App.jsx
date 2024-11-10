@@ -12,6 +12,10 @@ function App() {
     setShowProductList(true);
   };
 
+  const getLandingPage = () => {
+    setShowProductList(false);
+  }
+
   return (
     <div className="app-container">
       <div className={`landing-page ${showProductList ? 'fade-out' : ''}`}>
@@ -33,13 +37,10 @@ function App() {
 
       </div>
       <div className={`product-list-container ${showProductList ? 'visible' : ''}`}>
-        <ProductList />
+        <ProductList getLandingPage={getLandingPage}/>
       </div>
     </div>
   );
 }
 
 export default App;
-
-
-
